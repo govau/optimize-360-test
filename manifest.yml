@@ -1,8 +1,8 @@
 ---
 buildpack: staticfile_buildpack
-memory: 256M
+memory: 64M
 instances: 1
 
 applications:
-- name: design-system-starter
-  path: ./docs
+  - name: optimize-test
+    path: ./docs
