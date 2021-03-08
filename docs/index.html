@@ -195,7 +195,7 @@
 						<p>Support the callout with some short explanatory text. You don't need more than a couple of sentences.</p>
 						<p>Use buttons to give your user a clear call to action about what to do next.</p>
 						<div class="btn-cta-group">
-							<a class="au-btn" href="content">Primary call to action</a>
+							<a class="au-btn" href="#" onclick="sendData(this)">Primary call to action</a>
 						</div>
 					</div>
 				</div>
@@ -305,6 +305,18 @@
 
 	<!-- The javascript from pancake to open and close side nav on desktop -->
 	<script type="text/javascript" src="js/script.min.js"></script>
+	<script>
+		function sendData(e){
+			console.log({
+				event: "primary_action_click",
+				elementText:  e.innerText
+			});
+			dataLayer.push({
+				event: "primary_action_click",
+				elementText:  e.innerText
+			});
+		}
+	</script>
 </body>
 
 </html>
