@@ -203,8 +203,9 @@
 				</div>
 			</div>
 		</div>
-		<section class="au-body">
-			<div class="container-fluid">
+			
+			<section class="au-body">
+				<div class="container-fluid">
 						<div class="row">
 							<h2>What's happening</h2>
 							<ul class="au-card-list au-card-list--matchheight owl-carousel owl-theme">
@@ -212,8 +213,8 @@
 									<div class="au-card au-body au-card--shadow au-card--clickable">
 										<img class="au-responsive-media-img" src="https://designsystem.gov.au/assets/img/placeholder/600X260.png" alt />
 										<div class="au-card__inner">
-											<h3 class="au-card__title"><a class="au-card--clickable__link" href="content" data-card="1">Content page</a></h3>
-											<p>Some text</p>
+											<h4 class="au-card__title"><a class="au-card--clickable__link" href="content" data-card="1">What to do before you get vaccinated</a></h4>
+											<p>How to get proof of your COVID-19 vaccination.</p>
 										</div>
 									</div>
 								</li>
@@ -221,8 +222,8 @@
 									<div class="au-card au-body au-card--shadow au-card--clickable">
 										<img class="au-responsive-media-img" src="https://designsystem.gov.au/assets/img/placeholder/600X260.png" alt />
 										<div class="au-card__inner">
-											<h3 class="au-card__title"><a class="au-card--clickable__link" href="form" data-card="2">Link 2</a></h3>
-											<p>Some text</p>
+											<h4 class="au-card__title"><a class="au-card--clickable__link" href="form" data-card="2">Check your eligibility and locate your nearest vaccination centre</a></h4>
+											<p>Phase 1b begins on 22 March. Check if you are eligible and find your nearest vaccination centre.</p>
 										</div>
 									</div>
 								</li>
@@ -230,8 +231,8 @@
 									<div class="au-card au-body au-card--shadow au-card--clickable">
 										<img class="au-responsive-media-img" src="https://designsystem.gov.au/assets/img/placeholder/600X260.png" alt />
 										<div class="au-card__inner">
-											<h3 class="au-card__title"><a class="au-card--clickable__link" href="#" data-card="3">Link 3</a></h3>
-											<p>Some text</p>
+											<h3 class="au-card__title"><a class="au-card--clickable__link" href="#" data-card="3">Information for Aboriginal and Torres Strait Islander peoples</a></h3>
+											<p>Information about the COVID-19 vaccine program.</p>
 										</div>
 									</div>
 								</li>
@@ -370,6 +371,7 @@
 		$(document).ready(function(){
 			$(".owl-carousel").owlCarousel({
 				margin:10,
+				autoHeight:true,
 				responsiveClass:true,
 				stagePadding: 50,
 				responsive:{
