@@ -87,6 +87,8 @@
 
 	<link rel="icon" href="assets/favicons/favicon.ico">
 	<link type="text/css" rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+<link rel="stylesheet" href="css/owl.theme.default.min.css">
 
 	<!-- These are shivs to help modern html work in older internet explorer browsers -->
 	<!--[if lt IE 9]>
@@ -203,16 +205,55 @@
 		</div>
 		<section class="au-body">
 			<div class="container-fluid">
-				<div class="row">
-					<div class="col-md-12">
-						<h2>Some highlighted content</h2>
-						<p>Explain some important information upfront, what is the product or service. What is the role of it. How does the user get started using it. Keep this text simple and informative. Vestibulum non consequat tellus.</p>
-
-						<p>Nullam sollicitudin orci neque, ut condimentum ipsum blandit eu. Praesent eu sagittis elit.</p>
-
-						<p>Nullam ut nibh sed nunc molestie faucibus. Integer pulvinar sapien in porta fringilla. Cras et velit fermentum, pretium lacus gravida, egestas mauris. Explain some important information upfront, what is the product or service. What is the role of it. How does the user get started using it. Keep this text simple and informative.</p>
-					</div>
-				</div>
+						<div class="row">
+							<ul class="au-card-list au-card-list--matchheight owl-carousel owl-theme">
+								<li class="">
+									<div class="au-card au-body au-card--shadow au-card--clickable">
+										<img class="au-responsive-media-img" src="https://designsystem.gov.au/assets/img/placeholder/600X260.png" alt />
+										<div class="au-card__inner">
+											<h3 class="au-card__title"><a class="au-card--clickable__link" href="content" data-card="1">Content page</a></h3>
+											<p>Some text</p>
+										</div>
+									</div>
+								</li>
+								<li class="">
+									<div class="au-card au-body au-card--shadow au-card--clickable">
+										<img class="au-responsive-media-img" src="https://designsystem.gov.au/assets/img/placeholder/600X260.png" alt />
+										<div class="au-card__inner">
+											<h3 class="au-card__title"><a class="au-card--clickable__link" href="form" data-card="2">Link 2</a></h3>
+											<p>Some text</p>
+										</div>
+									</div>
+								</li>
+								<li class="">
+									<div class="au-card au-body au-card--shadow au-card--clickable">
+										<img class="au-responsive-media-img" src="https://designsystem.gov.au/assets/img/placeholder/600X260.png" alt />
+										<div class="au-card__inner">
+											<h3 class="au-card__title"><a class="au-card--clickable__link" href="#" data-card="3">Link 3</a></h3>
+											<p>Some text</p>
+										</div>
+									</div>
+								</li>
+								<li class="">
+									<div class="au-card au-body au-card--shadow au-card--clickable">
+										<img class="au-responsive-media-img" src="https://designsystem.gov.au/assets/img/placeholder/600X260.png" alt />
+										<div class="au-card__inner">
+											<h3 class="au-card__title"><a class="au-card--clickable__link" href="/link" data-card="4">Form page</a></h3>
+											<p>Some text</p>
+										</div>
+									</div>
+								</li>
+								<li class="">
+									<div class="au-card au-body au-card--shadow au-card--clickable">
+										<img class="au-responsive-media-img" src="https://designsystem.gov.au/assets/img/placeholder/600X260.png" alt />
+										<div class="au-card__inner">
+											<h3 class="au-card__title"><a class="au-card--clickable__link" href="/link" data-card="5">Element 5</a></h3>
+											<p>Some text</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
 			</div>
 		</section>
 		<section class="au-body au-body--alt banner">
@@ -267,7 +308,6 @@
 													class="au-card--clickable__link ">Card title</a></h2>
 										<p type="content" class="au-card__content">Additional text relating to the card.</p>
 									</div>
-								</div>
 							</li>
 						</ul>
 					</div>
@@ -276,6 +316,7 @@
 
 			<div class="articles-cta">
 				<a class="au-cta-link" href="#">See more articles</a>
+			</div>
 			</div>
 		</section>
 		<!--END CONTENT-->
@@ -301,10 +342,16 @@
 					</div>
 				</section>
 			</div>
+			</div>
 	</footer>
 
 	<!-- The javascript from pancake to open and close side nav on desktop -->
 	<script type="text/javascript" src="js/script.min.js"></script>
+	<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript" src ="js/owl.carousel.min.js"></script>
 	<script>
 		function sendData(e){
 			console.log({
@@ -316,6 +363,43 @@
 				elementText:  e.innerText
 			});
 		}
+	</script>
+	<script>
+
+		$(document).ready(function(){
+			$(".owl-carousel").owlCarousel({
+				margin:10,
+				responsiveClass:true,
+				stagePadding: 50,
+				responsive:{
+					0:{
+						items:1,
+						nav:true
+					},
+					600:{
+						items:2,
+						nav:false
+					},
+					1000:{
+						items:3,
+						nav:true,
+						loop:false
+					}
+				}
+			});
+		  });
+	</script>
+	<script>
+
+		$(".owl-carousel a").click(function() {
+			var element = $(this);
+			const cardNumber = element.attr("data-card");
+			dataLayer.push({
+				event: "card_click",
+				cardNumber:  cardNumber
+			});
+			
+		  });
 	</script>
 </body>
 </html>
