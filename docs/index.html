@@ -206,7 +206,7 @@
 			
 			<section class="au-body">
 				<div class="container-fluid">
-						<div class="row">
+						<div class="row" id="whats-happening-row">
 							<h2>What's happening</h2>
 							<ul class="au-card-list au-card-list--matchheight owl-carousel owl-theme">
 								<li class="">
@@ -394,13 +394,18 @@
 	</script>
 	<script>
 
-		$(".owl-carousel a").click(function() {
+		$("#whats-happening-row li a").mouseup(function() {
 			var element = $(this);
 			const cardNumber = element.attr("data-card");
 			dataLayer.push({
-				event: "card_click",
+				event: "whats_happening_link_click",
 				cardNumber:  cardNumber
 			});
+
+			console.log({
+				event: "whats_happening_link_click",
+				cardNumber:  cardNumber
+			})
 			
 		  });
 	</script>
